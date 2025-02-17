@@ -28,8 +28,10 @@ public class Account {
     }
 
     public void deposit(double amount) {
-        amount -= amount * DEPOSIT_FEE_PERCENTAGE;
-        balance += amount;
+        if (amount > 0) {
+            amount -= amount * DEPOSIT_FEE_PERCENTAGE;
+            balance += amount;
+        }
     }
 
     public void withdraw(double amount) {
